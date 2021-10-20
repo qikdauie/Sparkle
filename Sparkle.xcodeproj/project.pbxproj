@@ -2950,8 +2950,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					$CONFIGURATION_BUILD_DIR/obj/brave/vendor/sparkle/Vendor/bsdiff/,
-					$CONFIGURATION_BUILD_DIR/obj/brave/vendor/sparkle/Vendor/ed25519/,
+					$CONFIGURATION_BUILD_DIR/obj/qikfox/vendor/sparkle/Vendor/bsdiff/,
+					$CONFIGURATION_BUILD_DIR/obj/qikfox/vendor/sparkle/Vendor/ed25519/,
 				);
 				OTHER_CFLAGS = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2967,8 +2967,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					$CONFIGURATION_BUILD_DIR/obj/brave/vendor/sparkle/Vendor/bsdiff/,
-					$CONFIGURATION_BUILD_DIR/obj/brave/vendor/sparkle/Vendor/ed25519/,
+					$CONFIGURATION_BUILD_DIR/obj/qikfox/vendor/sparkle/Vendor/bsdiff/,
+					$CONFIGURATION_BUILD_DIR/obj/qikfox/vendor/sparkle/Vendor/ed25519/,
 				);
 				OTHER_CFLAGS = "";
 				SWIFT_VERSION = 3.0;

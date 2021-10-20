@@ -10,6 +10,7 @@ import sys
 
 
 def Main(args):
+  print("building sparkle framework...")
   out_dir = os.getcwd()
   sparkle_dir = os.path.dirname(os.path.realpath(__file__))
   os.chdir(sparkle_dir)
@@ -56,4 +57,5 @@ def Main(args):
 
 
 if __name__ == '__main__':
+  print("sparkle main called.")
   sys.exit(Main(sys.argv))
