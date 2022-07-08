@@ -4,6 +4,13 @@
 
 assert(is_mac)
 
+sparkle_binaries = [
+  "Sparkle.framework",
+  "BinaryDelta",
+  "generate_keys",
+  "sign_update"
+]
+
 bundle_data("sparkle_framework_bundle_data") {
   public_deps = [ ":build_sparkle_framework" ]
 
@@ -13,13 +20,10 @@ bundle_data("sparkle_framework_bundle_data") {
 
 action("build_sparkle_framework") {
   script="build_sparkle_framework.py"
-
-  outputs = [
-    "$root_out_dir/Sparkle.framework",
-    "$root_out_dir/BinaryDelta",
-    "$root_out_dir/generate_keys",
-    "$root_out_dir/sign_update",
-  ]
+  outputs = []
+  foreach(binary, sparkle_binaries) {
+    outputs += [ "$root_out_dir/" + binary ]
+  }
 }
 
 copy("copy_old_sign_update") {
@@ -28,4 +32,14 @@ copy("copy_old_sign_update") {
   outputs = [
     "$root_out_dir/old_dsa_scripts/{{source_file_part}}",
   ]
+}
+
+action("tar_sparkle_binaries") {
+  script="tar_sparkle_binaries.py"
+
+  outputs = [ "$root_out_dir/sparkle_binaries.tar.gz" ]
+
+  args = sparkle_binaries
+
+  deps = [ ":build_sparkle_framework" ]
 }
