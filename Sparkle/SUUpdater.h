@@ -86,6 +86,17 @@ SU_EXPORT @interface SUUpdater : NSObject
 - (void)checkForUpdatesInBackground;
 
 /*!
+ Checks for updates and never displays any UI.
+
+ This is unlike checkForUpdatesInBackground, which may display a UI in some cases.
+ Specifically, checkForUpdatesInBackground displays the "Update available" popup
+ when an update is available but the current user does not have write access to
+ the app installation directory. checkForUpdatesInBackgroundWithoutUi avoids this.
+ */
+
+- (void)checkForUpdatesInBackgroundWithoutUi;
+
+/*!
  A property indicating whether or not to check for updates automatically.
 
  Setting this property will persist in the host bundle's user defaults.
