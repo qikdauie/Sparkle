@@ -12,6 +12,7 @@ sparkle_binaries = [
 ]
 
 bundle_data("sparkle_framework_bundle_data") {
+  print("sparkle bundle_data target")
   public_deps = [ ":build_sparkle_framework" ]
 
   sources = [ "$root_out_dir/Sparkle.framework" ]
@@ -19,6 +20,7 @@ bundle_data("sparkle_framework_bundle_data") {
 }
 
 action("build_sparkle_framework") {
+  print("build sparkle framework action")
   script="build_sparkle_framework.py"
   outputs = []
   foreach(binary, sparkle_binaries) {
